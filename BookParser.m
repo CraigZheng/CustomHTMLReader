@@ -149,7 +149,8 @@
     NSMutableArray *parsedContent = [NSMutableArray new];
     for (HTMLNode *lineNode in [cNode findChildrenOfClass:[CommonSettings contentLineKeyword]]) {
 //        NSLog(@"%@ - %@", [CommonSettings contentLineKeyword], [BookParser cleanupString:lineNode.rawContents]);
-        [parsedContent addObject:[BookParser cleanupString:lineNode.allContents] ? [BookParser cleanupString:lineNode.allContents] : @""];
+        if ([BookParser cleanupString:lineNode.allContents])
+            [parsedContent addObject: [BookParser cleanupString:lineNode.allContents]];
         if ([lineNode findChildTags:@"img"].count > 0) {
             for (HTMLNode *imgNode in [lineNode findChildTags:@"img"]) {
                 NSString *imgSrc = [[CommonSettings lnImageHost] stringByAppendingPathComponent:[imgNode getAttributeNamed:@"data-cover"]];

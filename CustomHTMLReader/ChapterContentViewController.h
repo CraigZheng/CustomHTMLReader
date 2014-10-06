@@ -10,6 +10,7 @@
 #import "BookChapter.h"
 
 @interface ChapterContentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *contentTableView;
 
 @property BookChapter *myBookChapter;
 @end

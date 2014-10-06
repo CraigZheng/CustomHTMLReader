@@ -90,15 +90,15 @@
     [self cancel];
     incompletedBookChapter = chapter;
     if (chapter.linkToChapter) {
-#ifdef DEBUG
-        chapter.linkToChapter = [NSURL URLWithString:@"http://lknovel.lightnovel.cn/main/view/44192.html"];
-        NSMutableData *cachedData = [NSMutableData dataWithContentsOfFile:debugChapterContentDataPath];
-        if (cachedData) {
-            NSLog(@"DEBUG - USE CACHED DATA FOR CHAPTER CONTENT");
-            [self parseChapterContentAndNotifyDelegate:cachedData];
-            return;
-        }
-#endif
+//#ifdef DEBUG
+//        chapter.linkToChapter = [NSURL URLWithString:@"http://lknovel.lightnovel.cn/main/view/44192.html"];
+//        NSMutableData *cachedData = [NSMutableData dataWithContentsOfFile:debugChapterContentDataPath];
+//        if (cachedData) {
+//            NSLog(@"DEBUG - USE CACHED DATA FOR CHAPTER CONTENT");
+//            [self parseChapterContentAndNotifyDelegate:cachedData];
+//            return;
+//        }
+//#endif
         chapterContentUrlConnection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:chapter.linkToChapter] delegate:self startImmediately:YES];
     } else {
         NSLog(@"Unable to download content for chapter: %@, missing link", chapter);
