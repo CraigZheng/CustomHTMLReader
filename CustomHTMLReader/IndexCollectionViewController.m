@@ -64,7 +64,7 @@
         UILabel *titleLabel = (UILabel*) [cell viewWithTag:2];
         
         titleLabel.text = info.bookName;
-        [coverImage sd_setImageWithURL:info.coverImage
+        [coverImage sd_setImageWithURL:info.bookCoverImage
                           placeholderImage:nil options:indexPath.row == 0 ? SDWebImageRefreshCached : 0];
     }
     

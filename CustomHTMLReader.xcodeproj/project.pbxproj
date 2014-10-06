@@ -123,6 +123,7 @@
 		446CC6E619E1B253009BF24E /* BookInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 446CC6E519E1B253009BF24E /* BookInfoViewController.m */; };
 		446CC6E919E1BA5A009BF24E /* BookInfoHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 446CC6E819E1BA5A009BF24E /* BookInfoHeaderViewController.m */; };
 		446CC6EC19E1CAD4009BF24E /* BookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 446CC6EB19E1CAD4009BF24E /* BookChapter.m */; };
+		446CC6F919E277B5009BF24E /* ChapterContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 446CC6F819E277B4009BF24E /* ChapterContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -280,6 +281,8 @@
 		446CC6E819E1BA5A009BF24E /* BookInfoHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookInfoHeaderViewController.m; sourceTree = "<group>"; };
 		446CC6EA19E1CAD4009BF24E /* BookChapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookChapter.h; sourceTree = "<group>"; };
 		446CC6EB19E1CAD4009BF24E /* BookChapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookChapter.m; sourceTree = "<group>"; };
+		446CC6F719E277B4009BF24E /* ChapterContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterContentViewController.h; sourceTree = "<group>"; };
+		446CC6F819E277B4009BF24E /* ChapterContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +332,8 @@
 				446CC5D919E141CD009BF24E /* Book */,
 				446CC5CF19E14172009BF24E /* CommonSettings.h */,
 				446CC5D019E14172009BF24E /* CommonSettings.m */,
+				446CC6F719E277B4009BF24E /* ChapterContentViewController.h */,
+				446CC6F819E277B4009BF24E /* ChapterContentViewController.m */,
 				446CC54D19D85053009BF24E /* AppDelegate.h */,
 				446CC54E19D85053009BF24E /* AppDelegate.m */,
 				446CC5C619E13EF2009BF24E /* IndexCollectionViewController.h */,
@@ -746,6 +751,7 @@
 				446CC66B19E15B6F009BF24E /* PSTGridLayoutItem.m in Sources */,
 				446CC6CA19E160BC009BF24E /* SDWebImageManager.m in Sources */,
 				446CC64919E15B6F009BF24E /* MWPhotoBrowser.m in Sources */,
+				446CC6F919E277B5009BF24E /* ChapterContentViewController.m in Sources */,
 				446CC54F19D85053009BF24E /* AppDelegate.m in Sources */,
 				446CC65319E15B6F009BF24E /* MBProgressHUD.m in Sources */,
 				446CC6C219E160BC009BF24E /* SDWebImageCompat.m in Sources */,
@@ -950,6 +956,7 @@
 				INFOPLIST_FILE = CustomHTMLReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -960,6 +967,7 @@
 				INFOPLIST_FILE = CustomHTMLReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

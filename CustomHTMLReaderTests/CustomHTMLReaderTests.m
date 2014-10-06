@@ -111,7 +111,7 @@
 -(void)testBookInfoCreateCopy {
     BookInfo *originalBook = [BookInfo new];
     originalBook.bookName = @"1235";
-    originalBook.coverImage = [NSURL URLWithString:@"http://www.baidu.com"];
+    originalBook.bookCoverImage = [NSURL URLWithString:@"http://www.baidu.com"];
     originalBook.views = 50;
     originalBook.linkToBook = [NSURL URLWithString:@"http://www.google.com"];
     BookInfo *copiedBook = [originalBook createCopy];

@@ -12,7 +12,7 @@
 
 @interface BookInfoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *headerContainerView;
-@property (weak, nonatomic) IBOutlet UICollectionView *volumesCollectionView;
+@property (weak, nonatomic) IBOutlet UITableView *volumeListTableView;
 @property BookInfo *myBookInfo;
 
 @end

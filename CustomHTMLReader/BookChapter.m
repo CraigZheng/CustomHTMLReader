@@ -10,6 +10,12 @@
 
 @implementation BookChapter
 
+-(BOOL)isCompleted {
+    if (self.linkToChapter && self.chapterContent.count > 0)
+        return YES;
+    return NO;
+}
+
 -(NSString *)description {
     return [NSString stringWithFormat:@"%@: %@ - %@", [super description], self.chapterName, self.linkToChapter.absoluteString];
 }

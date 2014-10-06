@@ -9,11 +9,15 @@
 #import "BookInfoViewController.h"
 #import "BookInfoHeaderViewController.h"
 #import "BookDownloader.h"
+#import "ChapterContentViewController.h"
+
 #import "UIImageView+WebCache.h"
 
-@interface BookInfoViewController () <BookDownloaderDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate>
+@interface BookInfoViewController () <BookDownloaderDelegate, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 @property BookDownloader *downloader;
 @property BookInfoHeaderViewController *headerViewController;
+@property BookVolume *selectedBookVolume;
+@property BookChapter *selectedChapter;
 @property NSIndexPath *selectedIndexPath;
 @end
 
@@ -22,8 +26,12 @@
 @synthesize downloader;
 @synthesize headerContainerView;
 @synthesize headerViewController;
-@synthesize volumesCollectionView;
 @synthesize selectedIndexPath;
+@synthesize volumeListTableView;
+@synthesize selectedBookVolume;
+@synthesize selectedChapter;
+
+static NSString *cellIdentifier = @"volume_cell_identifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -88,11 +96,12 @@
 
 -(void)chapterContentDownloadedForChapter:(BookChapter *)chapter {
     NSLog(@"");
+    [self presentChapterContentViewControllerWithBookChapter:chapter];
 }
 
 -(void)reloadCollectionDataInMainThread {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.volumesCollectionView reloadData];
+        [self.volumeListTableView reloadData];
     });
 }
 
@@ -108,36 +117,63 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex != actionSheet.cancelButtonIndex && [actionSheet.title isEqualToString:@"Open..."]) {
         NSLog(@"Clicked %@", [actionSheet buttonTitleAtIndex:buttonIndex]);
+        selectedChapter = [selectedBookVolume.chapters objectAtIndex:buttonIndex];
+        if ([selectedChapter isCompleted]) {
+            [self presentChapterContentViewControllerWithBookChapter:selectedChapter];
+        } else
+            [downloader downloadChapter:selectedChapter];
     }
 }
 
-#pragma mark - UICollectionViewDataSource
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+-(void)presentChapterContentViewControllerWithBookChapter:(BookChapter*)chapter {
+    selectedChapter = chapter;
+    ChapterContentViewController *contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"chapter_content_view_controller"];
+    contentViewController.myBookChapter = chapter;
+    [self.navigationController pushViewController:contentViewController animated:YES];
+}
+
+#pragma mark - UITableViewDataSource
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return myBookInfo.volumes.count;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"volume_cover_cell_identifier";
-    UICollectionViewCell *cell = [volumesCollectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     if (cell) {
-        BookVolume *volume = [myBookInfo.volumes objectAtIndex:indexPath.row];
-//        NSLog(@"%@", volume);
-        UIImageView *coverImageView = (UIImageView*) [cell viewWithTag:1];
-        UILabel *titleLabel = (UILabel*) [cell viewWithTag:2];
+        BookVolume *bVolume = [myBookInfo.volumes objectAtIndex:indexPath.row];
+        UIImageView *coverImageView = (UIImageView*) [cell.contentView viewWithTag:1];
+        UILabel *titleLabel = (UILabel*) [cell.contentView viewWithTag:2];
         
-        titleLabel.text = volume.volumeName;
-        [coverImageView sd_setImageWithURL:volume.volumeCoverImage placeholderImage:nil];
+        [coverImageView sd_setImageWithURL:bVolume.volumeCoverImage placeholderImage:nil];
+        titleLabel.text = bVolume.volumeName;
     }
     return cell;
 }
 
-#pragma mark - UICollectionViewDelegate
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return tableView.rowHeight;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+#pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     selectedIndexPath = indexPath;
-    BookVolume *selectedBookVolume = [myBookInfo.volumes objectAtIndex:selectedIndexPath.row];
+    selectedBookVolume = [myBookInfo.volumes objectAtIndex:selectedIndexPath.row];
     if (![selectedBookVolume isCompleted])
         [downloader completeChapterInfo:selectedBookVolume];
     else
         [self presentActionSheetWithBookVolume:selectedBookVolume];
 }
+
+#pragma mark - PrepareForSegue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"go_chapter_view_controller"] && [segue.destinationViewController isKindOfClass:[ChapterContentViewController class]]) {
+        ChapterContentViewController *incomingViewController = (ChapterContentViewController*) segue.destinationViewController;
+        incomingViewController.myBookChapter = selectedChapter;
+    }
+}
+
 @end

@@ -18,7 +18,7 @@
 @property NSInteger views;
 @property NSDate *updatedAt;
 
-@property NSURL *coverImage;
+@property NSURL *bookCoverImage;
 @property NSURL *linkToBook;
 @property NSArray *volumes;
 

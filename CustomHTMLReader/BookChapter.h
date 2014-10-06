@@ -14,4 +14,6 @@
 @property NSString *chapterName;
 @property NSURL *linkToChapter;
 @property NSArray *chapterContent;
+
+-(BOOL)isCompleted;
 @end

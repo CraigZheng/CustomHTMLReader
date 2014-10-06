@@ -11,7 +11,7 @@
 @implementation BookVolume
 
 -(BOOL)isCompleted {
-    if (self.bookName && self.linkToBook && self.coverImage) {
+    if (self.bookName && self.linkToBook && self.bookCoverImage) {
         if (self.volumeName && self.linkToVolume && self.volumeCoverImage && self.chapters.count > 0)
             return YES;
     }

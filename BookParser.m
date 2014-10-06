@@ -88,7 +88,7 @@
     //if still no name is given
     if (newBook.bookName.length <= 0)
         newBook.bookName = [BookParser cleanupString:[bNode allContents]];
-    newBook.coverImage = [NSURL URLWithString:[imgNode getAttributeNamed:@"data-cover"]];
+    newBook.bookCoverImage = [NSURL URLWithString:[imgNode getAttributeNamed:@"data-cover"]];
     if (newBook.linkToBook)
         return newBook;
     return nil;
@@ -161,6 +161,7 @@
             }
         }
     }
+    bChapter.chapterContent = parsedContent;
     return bChapter;
 }
 

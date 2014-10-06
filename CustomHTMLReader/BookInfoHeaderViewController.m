@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 150); //150 as the height
-    [coverImageView sd_setImageWithURL:myBookInfo.coverImage placeholderImage:nil]; //placebo image might be a plus in the future
+    [coverImageView sd_setImageWithURL:myBookInfo.bookCoverImage placeholderImage:nil]; //placebo image might be a plus in the future
 }
 
 @end

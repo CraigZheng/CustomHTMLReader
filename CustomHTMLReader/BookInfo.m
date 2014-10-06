@@ -13,14 +13,14 @@
 
 -(BOOL)isCompleted {
 #warning bookDescription not ready
-    if (self.bookName && self.linkToBook && self.coverImage /*&& self.bookDescription*/ && self.volumes.count > 0) {
+    if (self.bookName && self.linkToBook && self.bookCoverImage /*&& self.bookDescription*/ && self.volumes.count > 0) {
         return YES;
     }
     return NO;
 }
 
 -(NSString *)description {
-    return [NSString stringWithFormat:@"Name: %@ - Description: %@ - Link: %@ - Img: %@ - %d volumes", self.bookName, self.bookDescription, self.linkToBook.absoluteString, self.coverImage.absoluteString, self.volumes.count];
+    return [NSString stringWithFormat:@"Name: %@ - Description: %@ - Link: %@ - Img: %@ - %d volumes", self.bookName, self.bookDescription, self.linkToBook.absoluteString, self.bookCoverImage.absoluteString, self.volumes.count];
 }
 
 -(instancetype)createCopy {
