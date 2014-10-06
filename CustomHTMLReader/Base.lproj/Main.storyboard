@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ps2-FC-G5K">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFh-CX-JOz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hFh-CX-JOz" secondAttribute="bottom" id="3CZ-Ff-kjp"/>
+                            <constraint firstItem="hFh-CX-JOz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cj6-vg-N0S"/>
+                            <constraint firstAttribute="trailing" secondItem="hFh-CX-JOz" secondAttribute="trailing" id="mVC-k6-WQf"/>
+                            <constraint firstItem="hFh-CX-JOz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uQT-tx-rx0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="hFh-CX-JOz" id="VkI-eg-n5f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="1002"/>
+        </scene>
+        <!--Volumn View Controller-->
+        <scene sceneID="VI4-KR-TD8">
+            <objects>
+                <viewController id="WOl-8r-fF6" customClass="VolumnViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dqT-62-3cz"/>
+                        <viewControllerLayoutGuide type="bottom" id="9EH-IZ-CVT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vlz-Qk-UOG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iH-1f-LQF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1iH-1f-LQF" firstAttribute="top" secondItem="Vlz-Qk-UOG" secondAttribute="top" id="9hb-Gm-Qre"/>
+                            <constraint firstAttribute="trailing" secondItem="1iH-1f-LQF" secondAttribute="trailing" id="BGZ-Sd-HOr"/>
+                            <constraint firstAttribute="bottom" secondItem="1iH-1f-LQF" secondAttribute="bottom" id="Emv-Ee-Ocg"/>
+                            <constraint firstItem="1iH-1f-LQF" firstAttribute="leading" secondItem="Vlz-Qk-UOG" secondAttribute="leading" id="HQS-D8-KtP"/>
+                            <constraint firstItem="1iH-1f-LQF" firstAttribute="leading" secondItem="Vlz-Qk-UOG" secondAttribute="leading" id="Qnd-oI-1fq"/>
+                            <constraint firstItem="9EH-IZ-CVT" firstAttribute="top" secondItem="1iH-1f-LQF" secondAttribute="bottom" id="mit-i5-Kn9"/>
+                            <constraint firstItem="1iH-1f-LQF" firstAttribute="top" secondItem="Vlz-Qk-UOG" secondAttribute="top" id="oXn-me-r7a"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9hb-Gm-Qre"/>
+                                <exclude reference="Qnd-oI-1fq"/>
+                                <exclude reference="mit-i5-Kn9"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="1iH-1f-LQF" id="KPW-qw-qMY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oo8-QS-dEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-582" y="1244"/>
+        </scene>
+        <!--All Series View Controller-->
+        <scene sceneID="Pnv-Yz-YVx">
+            <objects>
+                <viewController id="Ps2-FC-G5K" customClass="AllSeriesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lhh-8c-aSJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="pBO-C1-Aan"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Wd-X6-LEP">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZL-nN-rou">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CZL-nN-rou" firstAttribute="leading" secondItem="1Wd-X6-LEP" secondAttribute="leading" id="Ii5-Da-1J7"/>
+                            <constraint firstItem="CZL-nN-rou" firstAttribute="top" secondItem="1Wd-X6-LEP" secondAttribute="top" id="NFP-Pi-s5t"/>
+                            <constraint firstItem="pBO-C1-Aan" firstAttribute="top" secondItem="CZL-nN-rou" secondAttribute="bottom" id="W5v-nh-LFG"/>
+                            <constraint firstAttribute="trailing" secondItem="CZL-nN-rou" secondAttribute="trailing" id="wZ6-zC-on3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="CZL-nN-rou"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Ii5-Da-1J7"/>
+                                <exclude reference="NFP-Pi-s5t"/>
+                                <exclude reference="wZ6-zC-on3"/>
+                                <exclude reference="W5v-nh-LFG"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="CZL-nN-rou"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Ii5-Da-1J7"/>
+                                <include reference="NFP-Pi-s5t"/>
+                                <include reference="wZ6-zC-on3"/>
+                                <include reference="W5v-nh-LFG"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="CZL-nN-rou" id="z64-aE-vv2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7gQ-Ya-1Rq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="1778"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="8my-5N-Tx6">
+            <objects>
+                <viewController id="s0S-Da-avY" customClass="InfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yic-JB-gcC"/>
+                        <viewControllerLayoutGuide type="bottom" id="NUE-t2-rJq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iKv-Fe-OLW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKF-cR-97f">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NUE-t2-rJq" firstAttribute="top" secondItem="JKF-cR-97f" secondAttribute="bottom" id="RZB-2n-FW2"/>
+                            <constraint firstItem="JKF-cR-97f" firstAttribute="leading" secondItem="iKv-Fe-OLW" secondAttribute="leading" id="btz-R1-qxO"/>
+                            <constraint firstItem="JKF-cR-97f" firstAttribute="top" secondItem="iKv-Fe-OLW" secondAttribute="top" id="hxH-bt-KJy"/>
+                            <constraint firstAttribute="trailing" secondItem="JKF-cR-97f" secondAttribute="trailing" id="z0a-fh-aAa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="JKF-cR-97f" id="qzR-FG-igq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uzM-3o-hHC" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
